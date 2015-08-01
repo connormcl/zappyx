@@ -11,10 +11,11 @@ import UIKit
 class SignInViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     func displayAlertMessage(alertTitle:String, alertDescription:String) -> Void {
         // hide activityIndicator view and display alert message
-        // self.activityIndicatorView.hidden = true
+        self.activityIndicator.hidden = true
         let errorAlert = UIAlertView(title:alertTitle, message:alertDescription, delegate:nil, cancelButtonTitle:"OK")
         errorAlert.show()
     }
@@ -27,13 +28,19 @@ class SignInViewController: UIViewController {
         if self.passwordField.isFirstResponder() {
             self.passwordField.resignFirstResponder()
         }
+        
+        self.activityIndicator.hidden = false
+        
         // validate presence of required parameters
         if !(count(self.emailField.text) > 0
             && count(self.passwordField.text) > 0) {
                 self.displayAlertMessage("Parameters Required", alertDescription: "Some of the required parameters are missing")
                 return
         }
-        
+        makeLogInRequest()
+    }
+    
+    func makeLogInRequest(){
         var request = NSMutableURLRequest(URL: NSURL(string: "http://pushchat.rails.connormclaughlin.net/auth")!)
         var session = NSURLSession.sharedSession()
         request.HTTPMethod = "POST"
@@ -56,7 +63,7 @@ class SignInViewController: UIViewController {
             }
             var strData = NSString(data: data, encoding: NSUTF8StringEncoding)!
             println("Body: \(strData)")
-
+            
             let json = JSON(data: data, options: nil, error: nil)
             
             if let e = json["error"].string {
@@ -78,9 +85,6 @@ class SignInViewController: UIViewController {
         })
         
         task.resume()
-        //
-        //        // start activity indicator
-        //        // self.activityIndicatorView.hidden = false
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {

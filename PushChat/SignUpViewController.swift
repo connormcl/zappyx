@@ -13,10 +13,11 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var lastNameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     func displayAlertMessage(alertTitle:String, alertDescription:String) -> Void {
         // hide activityIndicator view and display alert message
-        // self.activityIndicatorView.hidden = true
+        self.activityIndicator.hidden = true
         let errorAlert = UIAlertView(title:alertTitle, message:alertDescription, delegate:nil, cancelButtonTitle:"OK")
         errorAlert.show()
     }
@@ -35,6 +36,9 @@ class SignUpViewController: UIViewController {
         if self.passwordField.isFirstResponder() {
             self.passwordField.resignFirstResponder()
         }
+        
+        self.activityIndicator.hidden = false
+        
         // validate presence of required parameters
         if !(count(self.firstNameField.text) > 0
             && count(self.lastNameField.text) > 0
@@ -43,7 +47,10 @@ class SignUpViewController: UIViewController {
             self.displayAlertMessage("Parameters Required", alertDescription: "Some of the required parameters are missing")
             return
         }
-        
+        makeSignUpRequest()
+    }
+    
+    func makeSignUpRequest() {
         var request = NSMutableURLRequest(URL: NSURL(string: "http://pushchat.rails.connormclaughlin.net/api/signup")!)
         var session = NSURLSession.sharedSession()
         request.HTTPMethod = "POST"
@@ -113,9 +120,6 @@ class SignUpViewController: UIViewController {
         })
         
         task.resume()
-//        
-//        // start activity indicator
-//        // self.activityIndicatorView.hidden = false
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
