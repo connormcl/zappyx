@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B3D0CB161B6359D200CAFC1D"
-               BuildableName = "PushChatTests.xctest"
-               BlueprintName = "PushChatTests"
+               BuildableName = "PushChat.xctest"
+               BlueprintName = "PushChat.temp_caseinsensitive_rename.temp_caseinsensitive_renameTests"
                ReferencedContainer = "container:PushChat.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,8 +47,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B3D0CB161B6359D200CAFC1D"
-               BuildableName = "PushChatTests.xctest"
-               BlueprintName = "PushChatTests"
+               BuildableName = "PushChat.xctest"
+               BlueprintName = "PushChat.temp_caseinsensitive_rename.temp_caseinsensitive_renameTests"
                ReferencedContainer = "container:PushChat.xcodeproj">
             </BuildableReference>
          </TestableReference>

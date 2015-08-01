@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:PushChat.xcodeproj">
+      location = "self:/Users/connor/code/xcode-projects/PushChat/PushChat.xcodeproj">
    </FileRef>
 </Workspace>

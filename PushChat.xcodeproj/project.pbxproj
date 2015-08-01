@@ -7,25 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3A2C47C1B65CF1400186EC8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2C47B1B65CF1400186EC8 /* SignUpViewController.swift */; };
+		B3A2C4821B6C6B8700186EC8 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2C4811B6C6B8700186EC8 /* SwiftyJSON.swift */; };
+		B3A2C4841B6C864500186EC8 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2C4831B6C864500186EC8 /* SignInViewController.swift */; };
 		B3D0CB081B6359D200CAFC1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D0CB071B6359D200CAFC1D /* AppDelegate.swift */; };
 		B3D0CB0A1B6359D200CAFC1D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D0CB091B6359D200CAFC1D /* ViewController.swift */; };
 		B3D0CB0D1B6359D200CAFC1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3D0CB0B1B6359D200CAFC1D /* Main.storyboard */; };
 		B3D0CB0F1B6359D200CAFC1D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3D0CB0E1B6359D200CAFC1D /* Images.xcassets */; };
 		B3D0CB121B6359D200CAFC1D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D0CB101B6359D200CAFC1D /* LaunchScreen.xib */; };
-		B3D0CB1E1B6359D200CAFC1D /* PushChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D0CB1D1B6359D200CAFC1D /* PushChatTests.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		B3D0CB181B6359D200CAFC1D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B3D0CAFA1B6359D100CAFC1D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B3D0CB011B6359D100CAFC1D;
-			remoteInfo = PushChat;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		B3A2C47B1B65CF1400186EC8 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		B3A2C4811B6C6B8700186EC8 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		B3A2C4831B6C864500186EC8 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		B3D0CB021B6359D100CAFC1D /* PushChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D0CB061B6359D100CAFC1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3D0CB071B6359D200CAFC1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -33,20 +28,12 @@
 		B3D0CB0C1B6359D200CAFC1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B3D0CB0E1B6359D200CAFC1D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B3D0CB111B6359D200CAFC1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		B3D0CB171B6359D200CAFC1D /* PushChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PushChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D0CB1C1B6359D200CAFC1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3D0CB1D1B6359D200CAFC1D /* PushChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushChatTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B3D0CAFF1B6359D100CAFC1D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B3D0CB141B6359D200CAFC1D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -69,7 +56,6 @@
 			isa = PBXGroup;
 			children = (
 				B3D0CB021B6359D100CAFC1D /* PushChat.app */,
-				B3D0CB171B6359D200CAFC1D /* PushChatTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,7 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				B3D0CB071B6359D200CAFC1D /* AppDelegate.swift */,
+				B3A2C4811B6C6B8700186EC8 /* SwiftyJSON.swift */,
 				B3D0CB091B6359D200CAFC1D /* ViewController.swift */,
+				B3A2C47B1B65CF1400186EC8 /* SignUpViewController.swift */,
+				B3A2C4831B6C864500186EC8 /* SignInViewController.swift */,
 				B3D0CB0B1B6359D200CAFC1D /* Main.storyboard */,
 				B3D0CB0E1B6359D200CAFC1D /* Images.xcassets */,
 				B3D0CB101B6359D200CAFC1D /* LaunchScreen.xib */,
@@ -132,24 +121,6 @@
 			productReference = B3D0CB021B6359D100CAFC1D /* PushChat.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B3D0CB161B6359D200CAFC1D /* PushChatTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B3D0CB241B6359D200CAFC1D /* Build configuration list for PBXNativeTarget "PushChatTests" */;
-			buildPhases = (
-				B3D0CB131B6359D200CAFC1D /* Sources */,
-				B3D0CB141B6359D200CAFC1D /* Frameworks */,
-				B3D0CB151B6359D200CAFC1D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B3D0CB191B6359D200CAFC1D /* PBXTargetDependency */,
-			);
-			name = PushChatTests;
-			productName = PushChatTests;
-			productReference = B3D0CB171B6359D200CAFC1D /* PushChatTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -161,10 +132,6 @@
 				TargetAttributes = {
 					B3D0CB011B6359D100CAFC1D = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					B3D0CB161B6359D200CAFC1D = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = B3D0CB011B6359D100CAFC1D;
 					};
 				};
 			};
@@ -182,7 +149,6 @@
 			projectRoot = "";
 			targets = (
 				B3D0CB011B6359D100CAFC1D /* PushChat */,
-				B3D0CB161B6359D200CAFC1D /* PushChatTests */,
 			);
 		};
 /* End PBXProject section */
@@ -198,13 +164,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B3D0CB151B6359D200CAFC1D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -212,28 +171,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3A2C47C1B65CF1400186EC8 /* SignUpViewController.swift in Sources */,
 				B3D0CB0A1B6359D200CAFC1D /* ViewController.swift in Sources */,
 				B3D0CB081B6359D200CAFC1D /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B3D0CB131B6359D200CAFC1D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B3D0CB1E1B6359D200CAFC1D /* PushChatTests.swift in Sources */,
+				B3A2C4841B6C864500186EC8 /* SignInViewController.swift in Sources */,
+				B3A2C4821B6C6B8700186EC8 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B3D0CB191B6359D200CAFC1D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B3D0CB011B6359D100CAFC1D /* PushChat */;
-			targetProxy = B3D0CB181B6359D200CAFC1D /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B3D0CB0B1B6359D200CAFC1D /* Main.storyboard */ = {
@@ -342,7 +288,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PushChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PushChat;
 			};
 			name = Debug;
 		};
@@ -352,41 +298,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PushChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		B3D0CB251B6359D200CAFC1D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = PushChatTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PushChat.app/PushChat";
-			};
-			name = Debug;
-		};
-		B3D0CB261B6359D200CAFC1D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = PushChatTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PushChat.app/PushChat";
+				PRODUCT_NAME = PushChat;
 			};
 			name = Release;
 		};
@@ -409,14 +321,7 @@
 				B3D0CB231B6359D200CAFC1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		B3D0CB241B6359D200CAFC1D /* Build configuration list for PBXNativeTarget "PushChatTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B3D0CB251B6359D200CAFC1D /* Debug */,
-				B3D0CB261B6359D200CAFC1D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

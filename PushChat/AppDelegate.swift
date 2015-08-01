@@ -13,10 +13,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        let notificationTypes:UIUserNotificationType = UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound
+        let notificationSettings:UIUserNotificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
         return true
+    }
+    
+    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+        UIApplication.sharedApplication().registerForRemoteNotifications()
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {        
+        var token = hexString(deviceToken)
+        let defaults = NSUserDefaults()
+        defaults.setObject(token, forKey: "deviceToken")
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        NSLog("Failed to get token, error: %@", error)
+    }
+    
+    func hexString(data:NSData)->String{
+        if data.length > 0 {
+            let  hexChars = Array("0123456789abcdef".utf8) as [UInt8];
+            let buf = UnsafeBufferPointer<UInt8>(start: UnsafePointer(data.bytes), count: data.length);
+            var output = [UInt8](count: data.length*2 + 1, repeatedValue: 0);
+            var ix:Int = 0;
+            for b in buf {
+                let hi  = Int((b & 0xf0) >> 4);
+                let low = Int(b & 0x0f);
+                output[ix++] = hexChars[ hi];
+                output[ix++] = hexChars[low];
+            }
+            let result = String.fromCString(UnsafePointer(output))!;
+            return result;
+        }
+        return "";
     }
 
     func applicationWillResignActive(application: UIApplication) {
