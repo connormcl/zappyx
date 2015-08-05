@@ -10,6 +10,7 @@
 		B3A2C47C1B65CF1400186EC8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2C47B1B65CF1400186EC8 /* SignUpViewController.swift */; };
 		B3A2C4821B6C6B8700186EC8 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2C4811B6C6B8700186EC8 /* SwiftyJSON.swift */; };
 		B3A2C4841B6C864500186EC8 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2C4831B6C864500186EC8 /* SignInViewController.swift */; };
+		B3A2C4E61B71AB3B00186EC8 /* FriendsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2C4E51B71AB3B00186EC8 /* FriendsList.swift */; };
 		B3D0CB081B6359D200CAFC1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D0CB071B6359D200CAFC1D /* AppDelegate.swift */; };
 		B3D0CB0A1B6359D200CAFC1D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D0CB091B6359D200CAFC1D /* ViewController.swift */; };
 		B3D0CB0D1B6359D200CAFC1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3D0CB0B1B6359D200CAFC1D /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 		B3A2C47B1B65CF1400186EC8 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B3A2C4811B6C6B8700186EC8 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		B3A2C4831B6C864500186EC8 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		B3A2C4E51B71AB3B00186EC8 /* FriendsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsList.swift; sourceTree = "<group>"; };
 		B3D0CB021B6359D100CAFC1D /* PushChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D0CB061B6359D100CAFC1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3D0CB071B6359D200CAFC1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				B3A2C47B1B65CF1400186EC8 /* SignUpViewController.swift */,
 				B3A2C4831B6C864500186EC8 /* SignInViewController.swift */,
 				B3D0CB0B1B6359D200CAFC1D /* Main.storyboard */,
+				B3A2C4E51B71AB3B00186EC8 /* FriendsList.swift */,
 				B3D0CB0E1B6359D200CAFC1D /* Images.xcassets */,
 				B3D0CB101B6359D200CAFC1D /* LaunchScreen.xib */,
 				B3D0CB051B6359D100CAFC1D /* Supporting Files */,
@@ -176,6 +179,7 @@
 				B3D0CB081B6359D200CAFC1D /* AppDelegate.swift in Sources */,
 				B3A2C4841B6C864500186EC8 /* SignInViewController.swift in Sources */,
 				B3A2C4821B6C6B8700186EC8 /* SwiftyJSON.swift in Sources */,
+				B3A2C4E61B71AB3B00186EC8 /* FriendsList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

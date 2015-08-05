@@ -41,7 +41,7 @@ class SignInViewController: UIViewController {
     }
     
     func makeLogInRequest(){
-        var request = NSMutableURLRequest(URL: NSURL(string: "http://pushchat.rails.connormclaughlin.net/auth")!)
+        var request = NSMutableURLRequest(URL: NSURL(string: "http://pushchat.rails.connormclaughlin.net/api/auth")!)
         var session = NSURLSession.sharedSession()
         request.HTTPMethod = "POST"
         
