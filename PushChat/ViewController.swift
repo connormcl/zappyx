@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     var capturedImage: UIImage!
     
     @IBOutlet weak var takePhotoButton: UIButton!
-    //@IBOutlet weak var viewPhotoButton: UIButton!
+    @IBOutlet weak var sendPhotoButton: UIButton!
     @IBOutlet weak var retakePhotoButton: UIButton!
     
     override func viewDidAppear(animated: Bool) {
@@ -70,24 +70,14 @@ class ViewController: UIViewController {
                 }
             }
         }
-        //self.viewPhotoButton.hidden = true
+        self.sendPhotoButton.hidden = true
         self.retakePhotoButton.hidden = true
     }
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-//        if (segue.identifier == "passImage") {
-//            var svc = segue.destinationViewController as! ImageViewController;
-//            
-//            svc.passedImage = self.capturedImage
-//            println("captured image:")
-//            println(self.capturedImage)
-//        }
-//    }
-    
     @IBAction func retakePhoto(sender: AnyObject) {
-        //self.capturedImage = nil
+        self.capturedImage = nil
         self.takePhotoButton.hidden = false
-        //self.viewPhotoButton.hidden = true
+        self.sendPhotoButton.hidden = true
         self.retakePhotoButton.hidden = true
         
         self.captureSession.startRunning()
@@ -130,7 +120,7 @@ class ViewController: UIViewController {
             }
         }
         self.takePhotoButton.hidden = true
-        //self.viewPhotoButton.hidden = false
+        self.sendPhotoButton.hidden = false
         self.retakePhotoButton.hidden = false
     }
     
@@ -151,6 +141,14 @@ class ViewController: UIViewController {
         captureSession.startRunning()
     }
     
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "sendPhoto") {
+            var svc = segue.destinationViewController as! FriendsList;
+            
+            svc.capturedImage = self.capturedImage
+            println("captured image:")
+            println(self.capturedImage)
+        }
+    }
 }
 

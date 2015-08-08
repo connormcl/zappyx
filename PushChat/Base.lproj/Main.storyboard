@@ -261,7 +261,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="7BA-La-Dbf" kind="show" id="Uo0-6s-ze6"/>
+                                    <segue destination="7BA-La-Dbf" kind="show" identifier="sendPhoto" id="Uo0-6s-ze6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -279,6 +279,7 @@
                     </view>
                     <connections>
                         <outlet property="retakePhotoButton" destination="fjt-LF-dSx" id="apJ-It-PF4"/>
+                        <outlet property="sendPhotoButton" destination="1OO-YC-G1m" id="DFq-3F-pAI"/>
                         <outlet property="takePhotoButton" destination="uin-lF-Amn" id="ZTF-pv-W6a"/>
                         <segue destination="vXZ-lx-hvc" kind="show" identifier="checkLoggedIn" id="ygW-3B-iGj"/>
                     </connections>
