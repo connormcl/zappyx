@@ -28,18 +28,11 @@ class ViewController: UIViewController {
         checkLoggedIn()
     }
     
-    func setCameraActiveButtons() {
-        self.takePhotoButton.hidden = false
-        self.viewPhotosButton.hidden = false
-        self.sendPhotoButton.hidden = true
-        self.retakePhotoButton.hidden = true
-    }
-    
-    func setCameraInactiveButtons() {
-        self.takePhotoButton.hidden = true
-        self.viewPhotosButton.hidden = true
-        self.sendPhotoButton.hidden = false
-        self.retakePhotoButton.hidden = false
+    func setCameraButtons(cameraActive: Bool) {
+        self.takePhotoButton.hidden = !cameraActive
+        self.viewPhotosButton.hidden = !cameraActive
+        self.sendPhotoButton.hidden = cameraActive
+        self.retakePhotoButton.hidden = cameraActive
     }
     
     func checkLoggedIn() {
@@ -85,12 +78,12 @@ class ViewController: UIViewController {
                 }
             }
         }
-        setCameraActiveButtons()
+        setCameraButtons(true)
     }
     
     @IBAction func retakePhoto(sender: AnyObject) {
         self.capturedImage = nil
-        setCameraActiveButtons()
+        setCameraButtons(true)
         
         self.captureSession.startRunning()
     }
@@ -131,7 +124,7 @@ class ViewController: UIViewController {
                 //self.captureSession.stopRunning()
             }
         }
-        setCameraInactiveButtons()
+        setCameraButtons(false)
     }
     
     func beginSession() {
