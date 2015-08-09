@@ -11,5 +11,6 @@ import UIKit
 class PhotoCell: UITableViewCell {
     @IBOutlet weak var senderNameLabel: UILabel!
     @IBOutlet weak var photoView: UIImageView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
 }

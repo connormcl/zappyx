@@ -58,6 +58,7 @@ class PhotosList: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = self.photosListTableView.cellForRowAtIndexPath(indexPath) as! PhotoCell
         let photo_id = json["unopened_photos"][indexPath.row].string!
         var request = NSMutableURLRequest(URL: NSURL(string: "http://pushchat.rails.connormclaughlin.net/api/get_photo?photo_id=\(photo_id)")!)
         var session = NSURLSession.sharedSession()
@@ -70,10 +71,13 @@ class PhotosList: UITableViewController {
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
         
+        cell.activityIndicator.hidden = false
+        
         var task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
             if error != nil {
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     self.displayAlertMessage("Error", alertDescription: "Failed to load photo")
+                    cell.activityIndicator.hidden = true
                 })
                 return
             }
@@ -88,10 +92,9 @@ class PhotosList: UITableViewController {
 //                })
 //                return
 //            }
-            let cell = self.photosListTableView.cellForRowAtIndexPath(indexPath) as! PhotoCell
-            cell.photoView.image = UIImage(data: data)
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.photosListTableView.reloadData()
+                cell.photoView.image = UIImage(data: data)
+                cell.activityIndicator.hidden = true
             })
         })
         
