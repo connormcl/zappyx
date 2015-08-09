@@ -69,7 +69,12 @@ class PhotosList: UITableViewController {
             println("FILE AVAILABLE");
             
             var photo : UIImage = UIImage(contentsOfFile: photoPath)!
-            cell.photoView.image = photo
+            cell.photo = photo
+            
+            if let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("photoDisplay") as? PhotoDisplayViewController {
+                self.presentViewController(viewController, animated: false, completion: nil)
+                viewController.imageView.image = cell.photo
+            }
             return
         }
         else
@@ -112,7 +117,7 @@ class PhotosList: UITableViewController {
             fileManager.createFileAtPath(photoPath, contents: data, attributes: nil)
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                cell.photoView.image = UIImage(data: data)
+                cell.photo = UIImage(data: data)
                 cell.activityIndicator.hidden = true
             })
         })
@@ -137,7 +142,7 @@ class PhotosList: UITableViewController {
             println("FILE AVAILABLE");
             
             var photo : UIImage = UIImage(contentsOfFile: photoPath)!
-            cell.photoView.image = photo
+            cell.photo = photo
         }
         else
         {

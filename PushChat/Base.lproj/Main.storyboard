@@ -219,8 +219,8 @@
         <!--Photos List-->
         <scene sceneID="KMq-lL-ej7">
             <objects>
-                <tableViewController id="Oee-zP-d5Y" customClass="PhotosList" customModule="PushChat" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="201" sectionHeaderHeight="22" sectionFooterHeight="22" id="gdy-Ay-ODg">
+                <tableViewController storyboardIdentifier="photosList" id="Oee-zP-d5Y" customClass="PhotosList" customModule="PushChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="gdy-Ay-ODg">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -245,40 +245,30 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoCell" rowHeight="201" id="Xm7-MQ-HuZ" customClass="PhotoCell" customModule="PushChat" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoCell" rowHeight="80" id="Xm7-MQ-HuZ" customClass="PhotoCell" customModule="PushChat" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xm7-MQ-HuZ" id="lsk-fc-p0H">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m7W-Vz-wlT">
-                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="200" id="yrB-Qv-ecM"/>
-                                            </constraints>
-                                        </imageView>
+                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2Su-A5-iUs">
+                                            <rect key="frame" x="33" y="30" width="20" height="20"/>
+                                        </activityIndicatorView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxj-0d-Ifw">
-                                            <rect key="frame" x="208" y="89" width="40" height="21"/>
+                                            <rect key="frame" x="78" y="29" width="40" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2Su-A5-iUs">
-                                            <rect key="frame" x="90" y="90" width="20" height="20"/>
-                                        </activityIndicatorView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="m7W-Vz-wlT" firstAttribute="top" secondItem="lsk-fc-p0H" secondAttribute="top" id="0fh-T7-t8y"/>
-                                        <constraint firstItem="2Su-A5-iUs" firstAttribute="centerX" secondItem="m7W-Vz-wlT" secondAttribute="centerX" id="5CL-Y6-T7w"/>
-                                        <constraint firstItem="2Su-A5-iUs" firstAttribute="centerY" secondItem="m7W-Vz-wlT" secondAttribute="centerY" id="5UZ-94-zVd"/>
-                                        <constraint firstAttribute="bottom" secondItem="m7W-Vz-wlT" secondAttribute="bottom" id="93R-eL-6DS"/>
-                                        <constraint firstItem="lxj-0d-Ifw" firstAttribute="top" secondItem="lsk-fc-p0H" secondAttribute="topMargin" constant="81" id="J7o-pn-JJM"/>
-                                        <constraint firstItem="lxj-0d-Ifw" firstAttribute="leading" secondItem="m7W-Vz-wlT" secondAttribute="trailing" constant="8" symbolic="YES" id="pOB-zx-T7f"/>
-                                        <constraint firstItem="m7W-Vz-wlT" firstAttribute="leading" secondItem="lsk-fc-p0H" secondAttribute="leading" id="tUg-pC-4FS"/>
+                                        <constraint firstItem="2Su-A5-iUs" firstAttribute="leading" secondItem="lsk-fc-p0H" secondAttribute="leadingMargin" constant="25" id="PgI-5a-b08"/>
+                                        <constraint firstItem="lxj-0d-Ifw" firstAttribute="leading" secondItem="2Su-A5-iUs" secondAttribute="trailing" constant="25" id="QMf-Qm-wji"/>
+                                        <constraint firstAttribute="centerY" secondItem="2Su-A5-iUs" secondAttribute="centerY" constant="-0.5" id="dh0-hr-6aY"/>
+                                        <constraint firstAttribute="centerY" secondItem="lxj-0d-Ifw" secondAttribute="centerY" id="pZp-fg-Tm8"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="activityIndicator" destination="2Su-A5-iUs" id="L21-oI-vdy"/>
-                                    <outlet property="photoView" destination="m7W-Vz-wlT" id="Q9Q-nd-92N"/>
                                     <outlet property="senderNameLabel" destination="lxj-0d-Ifw" id="z8Z-3u-zky"/>
                                 </connections>
                             </tableViewCell>
@@ -295,6 +285,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l9Q-pa-bf1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-22" y="1921"/>
+        </scene>
+        <!--Photo Display View Controller-->
+        <scene sceneID="WrK-pn-Enq">
+            <objects>
+                <viewController storyboardIdentifier="photoDisplay" id="dim-Op-G7z" customClass="PhotoDisplayViewController" customModule="PushChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OiY-gr-upq"/>
+                        <viewControllerLayoutGuide type="bottom" id="fbs-4C-H3M"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gfk-FB-9ei">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dn6-0q-vdv">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dn6-0q-vdv" firstAttribute="leading" secondItem="gfk-FB-9ei" secondAttribute="leading" id="CLL-Y8-9z5"/>
+                            <constraint firstItem="Dn6-0q-vdv" firstAttribute="top" secondItem="gfk-FB-9ei" secondAttribute="top" id="NjM-GP-qbQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Dn6-0q-vdv" secondAttribute="trailing" id="a1d-cp-uE0"/>
+                            <constraint firstItem="Dn6-0q-vdv" firstAttribute="bottom" secondItem="fbs-4C-H3M" secondAttribute="top" id="yrf-6H-p9N"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="Dn6-0q-vdv" id="KkJ-7y-m3Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lTI-yZ-235" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="675" y="1921"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="4fd-oc-fC1">
@@ -394,7 +416,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="ygW-3B-iGj"/>
         <segue reference="Raq-Nv-NCO"/>
-        <segue reference="YbK-u0-4Ss"/>
     </inferredMetricsTieBreakers>
 </document>
