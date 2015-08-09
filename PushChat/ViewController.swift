@@ -28,6 +28,20 @@ class ViewController: UIViewController {
         checkLoggedIn()
     }
     
+    func setCameraActiveButtons() {
+        self.takePhotoButton.hidden = false
+        self.viewPhotosButton.hidden = false
+        self.sendPhotoButton.hidden = true
+        self.retakePhotoButton.hidden = true
+    }
+    
+    func setCameraInactiveButtons() {
+        self.takePhotoButton.hidden = true
+        self.viewPhotosButton.hidden = true
+        self.sendPhotoButton.hidden = false
+        self.retakePhotoButton.hidden = false
+    }
+    
     func checkLoggedIn() {
         let defaults = NSUserDefaults.standardUserDefaults()
         if defaults.boolForKey("loggedInFlag") != true {
@@ -71,15 +85,12 @@ class ViewController: UIViewController {
                 }
             }
         }
-        self.sendPhotoButton.hidden = true
-        self.retakePhotoButton.hidden = true
+        setCameraActiveButtons()
     }
     
     @IBAction func retakePhoto(sender: AnyObject) {
         self.capturedImage = nil
-        self.takePhotoButton.hidden = false
-        self.sendPhotoButton.hidden = true
-        self.retakePhotoButton.hidden = true
+        setCameraActiveButtons()
         
         self.captureSession.startRunning()
     }
@@ -120,9 +131,7 @@ class ViewController: UIViewController {
                 //self.captureSession.stopRunning()
             }
         }
-        self.takePhotoButton.hidden = true
-        self.sendPhotoButton.hidden = false
-        self.retakePhotoButton.hidden = false
+        setCameraInactiveButtons()
     }
     
     func beginSession() {
