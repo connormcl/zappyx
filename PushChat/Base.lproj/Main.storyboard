@@ -262,9 +262,14 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2Su-A5-iUs">
+                                            <rect key="frame" x="90" y="90" width="20" height="20"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="m7W-Vz-wlT" firstAttribute="top" secondItem="lsk-fc-p0H" secondAttribute="top" id="0fh-T7-t8y"/>
+                                        <constraint firstItem="2Su-A5-iUs" firstAttribute="centerX" secondItem="m7W-Vz-wlT" secondAttribute="centerX" id="5CL-Y6-T7w"/>
+                                        <constraint firstItem="2Su-A5-iUs" firstAttribute="centerY" secondItem="m7W-Vz-wlT" secondAttribute="centerY" id="5UZ-94-zVd"/>
                                         <constraint firstAttribute="bottom" secondItem="m7W-Vz-wlT" secondAttribute="bottom" id="93R-eL-6DS"/>
                                         <constraint firstItem="lxj-0d-Ifw" firstAttribute="top" secondItem="lsk-fc-p0H" secondAttribute="topMargin" constant="81" id="J7o-pn-JJM"/>
                                         <constraint firstItem="lxj-0d-Ifw" firstAttribute="leading" secondItem="m7W-Vz-wlT" secondAttribute="trailing" constant="8" symbolic="YES" id="pOB-zx-T7f"/>
@@ -272,6 +277,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="activityIndicator" destination="2Su-A5-iUs" id="L21-oI-vdy"/>
                                     <outlet property="photoView" destination="m7W-Vz-wlT" id="Q9Q-nd-92N"/>
                                     <outlet property="senderNameLabel" destination="lxj-0d-Ifw" id="z8Z-3u-zky"/>
                                 </connections>
@@ -377,6 +383,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Raq-Nv-NCO"/>
-        <segue reference="ygW-3B-iGj"/>
+        <segue reference="YbK-u0-4Ss"/>
     </inferredMetricsTieBreakers>
 </document>
