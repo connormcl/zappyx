@@ -60,6 +60,28 @@ class PhotosList: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = self.photosListTableView.cellForRowAtIndexPath(indexPath) as! PhotoCell
         let photo_id = json["unopened_photos"][indexPath.row].string!
+        let fileManager = NSFileManager.defaultManager()
+        
+        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
+        var photoPath = "\(paths)/\(photo_id).jpg"
+        
+        if (fileManager.fileExistsAtPath(photoPath)) {
+            println("FILE AVAILABLE");
+            
+            var photo : UIImage = UIImage(contentsOfFile: photoPath)!
+            cell.photo = photo
+            
+            if let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("photoDisplay") as? PhotoDisplayViewController {
+                self.presentViewController(viewController, animated: false, completion: nil)
+                viewController.imageView.image = cell.photo
+            }
+            return
+        }
+        else
+        {
+            println("FILE NOT AVAILABLE");
+        }
+        
         var request = NSMutableURLRequest(URL: NSURL(string: "http://pushchat.rails.connormclaughlin.net/api/get_photo?photo_id=\(photo_id)")!)
         var session = NSURLSession.sharedSession()
         request.HTTPMethod = "GET"
@@ -92,8 +114,10 @@ class PhotosList: UITableViewController {
 //                })
 //                return
 //            }
+            fileManager.createFileAtPath(photoPath, contents: data, attributes: nil)
+            
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                cell.photoView.image = UIImage(data: data)
+                cell.photo = UIImage(data: data)
                 cell.activityIndicator.hidden = true
             })
         })
@@ -107,10 +131,23 @@ class PhotosList: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("PhotoCell", forIndexPath: indexPath) as! PhotoCell
-        cell.senderNameLabel.text = "Photo ID: " + json["unopened_photos"][indexPath.row].string!
-//        if let imageData = NSData(contentsOfURL: NSURL(string: "http://pushchat.rails.connormclaughlin.net/api/get_photo?photo_id=\(indexPath.row)")!) {
-//            cell.photoView.image = UIImage(data: imageData)
-//        }
+        let photo_id = json["unopened_photos"][indexPath.row].string!
+        cell.senderNameLabel.text = "Photo ID: \(photo_id)"
+        let fileManager = NSFileManager.defaultManager()
+        
+        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
+        var photoPath = "\(paths)/\(photo_id).jpg"
+        
+        if (fileManager.fileExistsAtPath(photoPath)) {
+            println("FILE AVAILABLE");
+            
+            var photo : UIImage = UIImage(contentsOfFile: photoPath)!
+            cell.photo = photo
+        }
+        else
+        {
+            println("FILE NOT AVAILABLE");
+        }
         return cell
     }
     
