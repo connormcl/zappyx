@@ -24,9 +24,7 @@ class PhotoDisplayViewController: UIViewController {
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        if let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("photosList") as? PhotosList {
-            self.presentViewController(viewController, animated: false, completion: nil)
-        }
+        self.dismissViewControllerAnimated(false, completion: nil)
     }
     
 

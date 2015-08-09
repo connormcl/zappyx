@@ -250,21 +250,33 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xm7-MQ-HuZ" id="lsk-fc-p0H">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2Su-A5-iUs">
-                                            <rect key="frame" x="33" y="30" width="20" height="20"/>
-                                        </activityIndicatorView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxj-0d-Ifw">
                                             <rect key="frame" x="78" y="29" width="40" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="evg-KN-AZT">
+                                            <rect key="frame" x="23" y="20" width="40" height="40"/>
+                                            <subviews>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2Su-A5-iUs">
+                                                    <rect key="frame" x="10" y="10" width="20" height="20"/>
+                                                </activityIndicatorView>
+                                            </subviews>
+                                            <color key="backgroundColor" red="1" green="0.086164324072943055" blue="0.15109031735419753" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="2Su-A5-iUs" firstAttribute="centerY" secondItem="evg-KN-AZT" secondAttribute="centerY" id="JEM-0i-Chk"/>
+                                                <constraint firstAttribute="height" constant="40" id="Lpw-Kl-gd3"/>
+                                                <constraint firstAttribute="width" constant="40" id="c97-np-VSB"/>
+                                                <constraint firstItem="2Su-A5-iUs" firstAttribute="centerX" secondItem="evg-KN-AZT" secondAttribute="centerX" id="djo-fr-HH3"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="2Su-A5-iUs" firstAttribute="leading" secondItem="lsk-fc-p0H" secondAttribute="leadingMargin" constant="25" id="PgI-5a-b08"/>
-                                        <constraint firstItem="lxj-0d-Ifw" firstAttribute="leading" secondItem="2Su-A5-iUs" secondAttribute="trailing" constant="25" id="QMf-Qm-wji"/>
-                                        <constraint firstAttribute="centerY" secondItem="2Su-A5-iUs" secondAttribute="centerY" constant="-0.5" id="dh0-hr-6aY"/>
-                                        <constraint firstAttribute="centerY" secondItem="lxj-0d-Ifw" secondAttribute="centerY" id="pZp-fg-Tm8"/>
+                                        <constraint firstAttribute="centerY" secondItem="lxj-0d-Ifw" secondAttribute="centerY" id="9CW-ja-nfx"/>
+                                        <constraint firstItem="lxj-0d-Ifw" firstAttribute="leading" secondItem="evg-KN-AZT" secondAttribute="trailing" constant="15" id="Dqz-dI-7LQ"/>
+                                        <constraint firstItem="evg-KN-AZT" firstAttribute="leading" secondItem="lsk-fc-p0H" secondAttribute="leadingMargin" constant="15" id="Uxn-OM-454"/>
+                                        <constraint firstAttribute="centerY" secondItem="evg-KN-AZT" secondAttribute="centerY" constant="-0.5" id="aUc-zN-UQg"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
