@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var takePhotoButton: UIButton!
     @IBOutlet weak var sendPhotoButton: UIButton!
     @IBOutlet weak var retakePhotoButton: UIButton!
+    @IBOutlet weak var viewPhotosButton: UIButton!
     
     override func viewDidAppear(animated: Bool) {
         checkLoggedIn()
