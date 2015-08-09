@@ -92,13 +92,8 @@ class PhotosList: UITableViewController {
 //                })
 //                return
 //            }
-            cell.photoView.image = UIImage(data: data)
-            println("Finished fetching image")
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                //self.photosListTableView.reloadData()
-                self.photosListTableView.beginUpdates()
-                self.photosListTableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-                self.photosListTableView.endUpdates()
+                cell.photoView.image = UIImage(data: data)
                 cell.activityIndicator.hidden = true
             })
         })
