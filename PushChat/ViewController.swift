@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var sendPhotoButton: UIButton!
     @IBOutlet weak var retakePhotoButton: UIButton!
     @IBOutlet weak var viewPhotosButton: UIButton!
+    @IBOutlet weak var flipCameraButton: UIButton!
     
     override func viewDidAppear(animated: Bool) {
         checkLoggedIn()
@@ -31,6 +32,7 @@ class ViewController: UIViewController {
     func setCameraButtons(cameraActive: Bool) {
         self.takePhotoButton.hidden = !cameraActive
         self.viewPhotosButton.hidden = !cameraActive
+        self.flipCameraButton.hidden = !cameraActive
         self.sendPhotoButton.hidden = cameraActive
         self.retakePhotoButton.hidden = cameraActive
     }
@@ -48,6 +50,43 @@ class ViewController: UIViewController {
             self.showViewController(loginController, sender: nil)
             let defaults = NSUserDefaults.standardUserDefaults()
             defaults.setBool(false, forKey: "loggedInFlag")
+        }
+    }
+    
+    @IBAction func flipCamera(sender: AnyObject) {
+        if (captureSession.running) {
+            captureSession.beginConfiguration()
+            
+            let currentCameraInput : AVCaptureDeviceInput = captureSession.inputs[0] as! AVCaptureDeviceInput
+            captureSession.removeInput(currentCameraInput)
+            
+            let devices = AVCaptureDevice.devices()
+            
+            // Loop through all the capture devices on this phone
+            for device in devices {
+                // Make sure this particular device supports video
+                if (device.hasMediaType(AVMediaTypeVideo)) {
+                    if (currentCameraInput.device.position == AVCaptureDevicePosition.Back) {
+                        // Finally check the position and confirm we've got the front camera
+                        if(device.position == AVCaptureDevicePosition.Front) {
+                            captureDevice = device as? AVCaptureDevice
+                        }
+                    } else {
+                        // Finally check the position and confirm we've got the back camera
+                        if(device.position == AVCaptureDevicePosition.Back) {
+                            captureDevice = device as? AVCaptureDevice
+                        }
+                    }
+                }
+            }
+            
+            var err : NSError? = nil
+            captureSession.addInput(AVCaptureDeviceInput(device: captureDevice, error: &err))
+            
+            if err != nil {
+                println("error: \(err?.localizedDescription)")
+            }
+            captureSession.commitConfiguration()
         }
     }
     
