@@ -27,6 +27,9 @@ class PhotoDisplayViewController: UIViewController {
         self.dismissViewControllerAnimated(false, completion: nil)
     }
     
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
 
     /*
     // MARK: - Navigation

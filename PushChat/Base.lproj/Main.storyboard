@@ -361,7 +361,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjt-LF-dSx">
-                                <rect key="frame" x="16" y="20" width="93" height="30"/>
+                                <rect key="frame" x="16" y="40" width="93" height="30"/>
                                 <state key="normal" title="Retake Photo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -379,7 +379,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1oV-jj-DxL">
-                                <rect key="frame" x="16" y="20" width="85" height="30"/>
+                                <rect key="frame" x="16" y="40" width="85" height="30"/>
                                 <state key="normal" title="View Photos">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -388,7 +388,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nnG-bl-xBX">
-                                <rect key="frame" x="554" y="20" width="30" height="30"/>
+                                <rect key="frame" x="554" y="40" width="30" height="30"/>
                                 <state key="normal" title="Flip">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -400,17 +400,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="rsT-JI-VFs" secondAttribute="bottom" constant="20" symbolic="YES" id="2xa-AC-kBD"/>
+                            <constraint firstItem="1oV-jj-DxL" firstAttribute="leading" secondItem="rsT-JI-VFs" secondAttribute="leading" id="4IH-HQ-kTA"/>
                             <constraint firstItem="uin-lF-Amn" firstAttribute="baseline" secondItem="rsT-JI-VFs" secondAttribute="baseline" id="4Ir-B1-C4e"/>
-                            <constraint firstItem="fjt-LF-dSx" firstAttribute="leading" secondItem="d5m-td-Gzw" secondAttribute="leadingMargin" id="5Pe-FR-SFj"/>
                             <constraint firstItem="uin-lF-Amn" firstAttribute="centerX" secondItem="d5m-td-Gzw" secondAttribute="centerX" id="5hx-m1-f78"/>
-                            <constraint firstItem="fjt-LF-dSx" firstAttribute="leading" secondItem="rsT-JI-VFs" secondAttribute="leading" id="AoB-ey-bV8"/>
-                            <constraint firstItem="nnG-bl-xBX" firstAttribute="trailing" secondItem="1OO-YC-G1m" secondAttribute="trailing" id="Ptm-ar-7dA"/>
+                            <constraint firstItem="1oV-jj-DxL" firstAttribute="baseline" secondItem="fjt-LF-dSx" secondAttribute="baseline" id="9F1-Hc-htD"/>
+                            <constraint firstItem="fjt-LF-dSx" firstAttribute="top" secondItem="YRy-eI-m29" secondAttribute="bottom" constant="20" id="FSp-S2-x37"/>
+                            <constraint firstItem="nnG-bl-xBX" firstAttribute="trailing" secondItem="1OO-YC-G1m" secondAttribute="trailing" id="Hgm-5Q-7Qm"/>
+                            <constraint firstItem="1oV-jj-DxL" firstAttribute="leading" secondItem="fjt-LF-dSx" secondAttribute="leading" id="NU4-Se-8OJ"/>
+                            <constraint firstItem="nnG-bl-xBX" firstAttribute="baseline" secondItem="1oV-jj-DxL" secondAttribute="baseline" id="Os5-JP-s4I"/>
                             <constraint firstItem="1OO-YC-G1m" firstAttribute="trailing" secondItem="d5m-td-Gzw" secondAttribute="trailingMargin" id="RBJ-Ap-ATu"/>
                             <constraint firstItem="1OO-YC-G1m" firstAttribute="baseline" secondItem="uin-lF-Amn" secondAttribute="baseline" id="TQz-Hu-V7F"/>
-                            <constraint firstItem="1oV-jj-DxL" firstAttribute="leading" secondItem="fjt-LF-dSx" secondAttribute="leading" id="Vq0-e7-vHK"/>
-                            <constraint firstItem="fjt-LF-dSx" firstAttribute="top" secondItem="YRy-eI-m29" secondAttribute="bottom" id="XcA-io-kgE"/>
-                            <constraint firstItem="nnG-bl-xBX" firstAttribute="baseline" secondItem="1oV-jj-DxL" secondAttribute="baseline" id="aEj-NZ-KfC"/>
-                            <constraint firstItem="1oV-jj-DxL" firstAttribute="baseline" secondItem="fjt-LF-dSx" secondAttribute="baseline" id="oGi-J1-yQk"/>
+                            <constraint firstItem="fjt-LF-dSx" firstAttribute="leading" secondItem="d5m-td-Gzw" secondAttribute="leadingMargin" id="eR6-ve-2La"/>
                         </constraints>
                     </view>
                     <connections>

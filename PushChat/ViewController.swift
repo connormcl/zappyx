@@ -192,5 +192,9 @@ class ViewController: UIViewController {
             println(self.capturedImage)
         }
     }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
 }
 
