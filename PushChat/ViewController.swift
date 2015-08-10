@@ -27,6 +27,13 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         checkLoggedIn()
+        restartCaptureSession()
+    }
+    
+    func restartCaptureSession() {
+        if !captureSession.running {
+            captureSession.startRunning()
+        }
     }
     
     func setCameraButtons(cameraActive: Bool) {
