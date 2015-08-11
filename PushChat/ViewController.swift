@@ -27,6 +27,9 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         checkLoggedIn()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         restartCaptureSession()
     }
     
