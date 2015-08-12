@@ -30,13 +30,30 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        restartCaptureSession()
+        // Do any additional setup after loading the view, typically from a nib.
+        captureSession.sessionPreset = AVCaptureSessionPresetHigh
+        
+        let devices = AVCaptureDevice.devices()
+        
+        // Loop through all the capture devices on this phone
+        for device in devices {
+            // Make sure this particular device supports video
+            if (device.hasMediaType(AVMediaTypeVideo)) {
+                // Finally check the position and confirm we've got the back camera
+                if(device.position == AVCaptureDevicePosition.Back) {
+                    captureDevice = device as? AVCaptureDevice
+                    if captureDevice != nil {
+                        println("Capture device found")
+                        beginSession()
+                    }
+                }
+            }
+        }
+        setCameraButtons(true)
     }
     
-    func restartCaptureSession() {
-        if !captureSession.running {
-            captureSession.startRunning()
-        }
+    override func viewWillDisappear(animated: Bool) {
+        self.captureSession.stopRunning()
     }
     
     func setCameraButtons(cameraActive: Bool) {
@@ -107,27 +124,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view, typically from a nib.
-        captureSession.sessionPreset = AVCaptureSessionPresetHigh
-        
-        let devices = AVCaptureDevice.devices()
-        
-        // Loop through all the capture devices on this phone
-        for device in devices {
-            // Make sure this particular device supports video
-            if (device.hasMediaType(AVMediaTypeVideo)) {
-                // Finally check the position and confirm we've got the back camera
-                if(device.position == AVCaptureDevicePosition.Back) {
-                    captureDevice = device as? AVCaptureDevice
-                    if captureDevice != nil {
-                        println("Capture device found")
-                        beginSession()
-                    }
-                }
-            }
-        }
-        setCameraButtons(true)
     }
     
     @IBAction func retakePhoto(sender: AnyObject) {
